@@ -1,11 +1,16 @@
 namespace MementoPattern;
 
-public class SnapShot
+public static class SnapShot
 {
-    public Dictionary<string, Memento> snapShot = new();
+    public static Dictionary<string, Memento> snapShot = new();
 
-    public SnapShot(string name, Memento memento)
+    public static void AddSnapShot(string name, Memento memento)
     {
         snapShot.Add(name, memento);
+    }
+
+    public static Memento GetSnapShot(string name)
+    {
+        return snapShot[name];
     }
 }
